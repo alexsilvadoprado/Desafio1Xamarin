@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Desafio1"
+             x:Class="Desafio1.MainPage"
+             BackgroundColor="#404040"
+             Title="Calculadora">
+    <Grid Padding="5, 0, 5, 0" ColumnSpacing="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!--Primeira Linha-->
+        <Label
+            x:Name="lblNumero"
+            Text="0" 
+            FontSize="60" 
+            TextColor="White"
+            FontAttributes="Bold"
+            Grid.Row="0" 
+            Grid.Column="0" 
+            Grid.ColumnSpan="4" 
+            HorizontalTextAlignment="End"
+            VerticalTextAlignment="End" />
+        <!--Fim da Primeira Linha-->
+
+        <!--Segunda Linha-->
+        <Button ClassId="btnClear" 
+                Text="C"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="1"
+                Grid.Column="0"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnMaisOuMenos" 
+                Text="+/-"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="1"
+                Grid.Column="1"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnPercent" 
+                Text="%"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="1"
+                Grid.Column="2"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnDiv" 
+                Text="DIV"
+                TextColor="White"
+                FontSize="Medium"
+                BackgroundColor="#E8AD00"
+                Grid.Row="1"
+                Grid.Column="3"
+                Clicked="OnButtonClearClicked" />
+        <!--Fim da Segunda Linha-->
+
+        <!--Terceira Linha-->
+        <Button ClassId="btn7" 
+                Text="7"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="2"
+                Grid.Column="0"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btn8" 
+                Text="8"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="2"
+                Grid.Column="1"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btn9" 
+                Text="9"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="2"
+                Grid.Column="2"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnMult" 
+                Text="x"
+                TextColor="White"
+                FontSize="Medium"
+                BackgroundColor="#E8AD00"
+                Grid.Row="2"
+                Grid.Column="3"
+                Clicked="OnButtonClearClicked" />
+        <!--Fim da Terceira Linha-->
+
+        <!--Quarta Linha-->
+        <Button ClassId="btn4" 
+                Text="4"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="3"
+                Grid.Column="0"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btn5" 
+                Text="5"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="3"
+                Grid.Column="1"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btn6" 
+                Text="6"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="3"
+                Grid.Column="2"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnMenos" 
+                Text="-"
+                TextColor="White"
+                FontSize="Medium"
+                BackgroundColor="#E8AD00"
+                Grid.Row="3"
+                Grid.Column="3"
+                Clicked="OnButtonClearClicked" />
+        <!--Fim da Quarta Linha-->
+
+        <!--Quinta Linha-->
+        <Button ClassId="btn1" 
+                Text="1"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="4"
+                Grid.Column="0"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btn2" 
+                Text="2"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="4"
+                Grid.Column="1"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btn3" 
+                Text="3"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="4"
+                Grid.Column="2"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnMais" 
+                Text="+"
+                TextColor="White"
+                FontSize="Medium"
+                BackgroundColor="#E8AD00"
+                Grid.Row="4"
+                Grid.Column="3"
+                Clicked="OnButtonClearClicked" />
+        <!--Fim da Quinta Linha-->
+
+        <!--Sexta Linha-->
+        <Button ClassId="btn0" 
+                Text="0"
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="5"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0, 0, 0, 5"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnPonto" 
+                Text="."
+                TextColor="Black"
+                FontSize="Medium"
+                BackgroundColor="#DDD"
+                Grid.Row="5"
+                Grid.Column="2"
+                Margin="0, 0, 0, 5"
+                Clicked="OnButtonClearClicked" />
+
+        <Button ClassId="btnIgual" 
+                Text="="
+                TextColor="White"
+                FontSize="Medium"
+                BackgroundColor="#E8AD00"
+                Grid.Row="5"
+                Grid.Column="3"
+                Margin="0, 0, 0, 5"
+                Clicked="OnButtonClearClicked" />
+        <!--Fim da Sexta Linha-->
+    </Grid>
+</ContentPage>
