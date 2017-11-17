@@ -30,7 +30,8 @@
             FontAttributes="Bold"
             Grid.Row="0" 
             Grid.Column="0" 
-            Grid.ColumnSpan="4" 
+            Grid.ColumnSpan="4"
+            LineBreakMode="TailTruncation"
             HorizontalTextAlignment="End"
             VerticalTextAlignment="End" />
         <!--Fim da Primeira Linha-->
@@ -52,7 +53,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="1"
                 Grid.Column="1"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonMaisMenosClicked" />
 
         <Button ClassId="btnPercent" 
                 Text="%"
@@ -61,7 +62,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="1"
                 Grid.Column="2"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonOperationClicked" />
 
         <Button ClassId="btnDiv" 
                 Text="DIV"
@@ -70,7 +71,7 @@
                 BackgroundColor="#E8AD00"
                 Grid.Row="1"
                 Grid.Column="3"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonOperationClicked" />
         <!--Fim da Segunda Linha-->
 
         <!--Terceira Linha-->
@@ -81,7 +82,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="2"
                 Grid.Column="0"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btn8" 
                 Text="8"
@@ -90,7 +91,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="2"
                 Grid.Column="1"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btn9" 
                 Text="9"
@@ -99,7 +100,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="2"
                 Grid.Column="2"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btnMult" 
                 Text="x"
@@ -108,7 +109,7 @@
                 BackgroundColor="#E8AD00"
                 Grid.Row="2"
                 Grid.Column="3"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonOperationClicked" />
         <!--Fim da Terceira Linha-->
 
         <!--Quarta Linha-->
@@ -119,7 +120,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="3"
                 Grid.Column="0"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btn5" 
                 Text="5"
@@ -128,7 +129,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="3"
                 Grid.Column="1"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btn6" 
                 Text="6"
@@ -137,7 +138,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="3"
                 Grid.Column="2"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btnMenos" 
                 Text="-"
@@ -146,7 +147,7 @@
                 BackgroundColor="#E8AD00"
                 Grid.Row="3"
                 Grid.Column="3"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonOperationClicked" />
         <!--Fim da Quarta Linha-->
 
         <!--Quinta Linha-->
@@ -157,7 +158,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="4"
                 Grid.Column="0"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btn2" 
                 Text="2"
@@ -166,7 +167,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="4"
                 Grid.Column="1"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btn3" 
                 Text="3"
@@ -175,7 +176,7 @@
                 BackgroundColor="#DDD"
                 Grid.Row="4"
                 Grid.Column="2"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btnMais" 
                 Text="+"
@@ -184,7 +185,7 @@
                 BackgroundColor="#E8AD00"
                 Grid.Row="4"
                 Grid.Column="3"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonOperationClicked" />
         <!--Fim da Quinta Linha-->
 
         <!--Sexta Linha-->
@@ -197,7 +198,7 @@
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
                 Margin="0, 0, 0, 5"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btnPonto" 
                 Text="."
@@ -207,7 +208,7 @@
                 Grid.Row="5"
                 Grid.Column="2"
                 Margin="0, 0, 0, 5"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonNumberClicked" />
 
         <Button ClassId="btnIgual" 
                 Text="="
@@ -217,7 +218,7 @@
                 Grid.Row="5"
                 Grid.Column="3"
                 Margin="0, 0, 0, 5"
-                Clicked="OnButtonClearClicked" />
+                Clicked="OnButtonOperationClicked" />
         <!--Fim da Sexta Linha-->
     </Grid>
 </ContentPage>
