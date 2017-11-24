@@ -26,79 +26,70 @@ namespace Desafio1
         {
             Button btnNumero = (Button)sender;
 
-            if (!lblNumero.Text.Equals("0"))
+            if (operadorPrimario)
             {
-                if (operadorPrimario)
+                if (string.IsNullOrEmpty(valor1))
                 {
-                    if (string.IsNullOrEmpty(resultado))
+                    if (btnNumero.ClassId.Equals("btn0"))
+                        return;
+                    if (btnNumero.ClassId.Equals("btnPonto"))
                     {
-                        valor1 += btnNumero.Text;
+                        valor1 += "0" + btnNumero.Text;
                         lblNumero.Text += btnNumero.Text;
-                        resultado = "";
+                        return;
                     }
-                    else
-                    {
-                        valor1 = btnNumero.Text;
-                        lblNumero.Text = btnNumero.Text;
-                        resultado = "0";
-                    }
+                    valor1 += btnNumero.Text;
+                    lblNumero.Text = btnNumero.Text;
                 }
                 else
                 {
-                    valor2 += btnNumero.Text;
-                    lblNumero.Text += btnNumero.Text;
+                    if (string.IsNullOrEmpty(resultado))
+                    {
+                        if (btnNumero.ClassId.Equals("btnPonto") && valor1.Contains('.'))
+                            return;
+                        valor1 += btnNumero.Text;
+                        lblNumero.Text += btnNumero.Text;
+                    }
+                    else
+                    {
+                        if (btnNumero.ClassId.Equals("btnPonto"))
+                        {
+                            if (valor1.Last() == '.')
+                                return;
+                            valor1 = "0" + btnNumero.Text;
+                            lblNumero.Text = "0" + btnNumero.Text;
+                            return;
+                        }
+                        valor1 = btnNumero.Text;
+                        lblNumero.Text = btnNumero.Text;
+                        resultado = "";
+                    }
                 }
             }
             else
             {
-                if (btnNumero.ClassId.Equals("btnPonto"))
+                if (string.IsNullOrEmpty(valor2))
                 {
-                    if (operadorPrimario)
+                    if (btnNumero.ClassId.Equals("btn0"))
                     {
-                        if (string.IsNullOrEmpty(resultado))
-                        {
-                            valor1 += btnNumero.Text;
-                            lblNumero.Text += btnNumero.Text;
-                            resultado = "";
-                        }
-                        else
-                        {
-                            valor1 = btnNumero.Text;
-                            lblNumero.Text = btnNumero.Text;
-                            resultado = "0";
-                        }
+                        lblNumero.Text = btnNumero.Text;
+                        return;
                     }
-                    else
+                    if (btnNumero.ClassId.Equals("btnPonto"))
                     {
-                        valor2 += btnNumero.Text;
-                        lblNumero.Text += btnNumero.Text;
+                        valor2 += "0" + btnNumero.Text;
+                        lblNumero.Text = valor2;
+                        return;
                     }
+                    valor2 += btnNumero.Text;
+                    lblNumero.Text = valor2;
                 }
                 else
                 {
-                    if (operadorPrimario)
-                    {
-                        //if (string.IsNullOrEmpty(resultado))
-                        //{
-                        //    valor1 = btnNumero.Text;
-                        //    lblNumero.Text = btnNumero.Text;
-                        //    resultado = "";
-                        //}
-                        //else
-                        //{
-                        //    valor1 = btnNumero.Text;
-                        //    lblNumero.Text = btnNumero.Text;
-                        //    resultado = "0";
-                        //}
-                        valor1 = btnNumero.Text;
-                        lblNumero.Text = btnNumero.Text;
-                        resultado = "0";
-                    }
-                    else
-                    {
-                        valor2 += btnNumero.Text;
-                        lblNumero.Text += btnNumero.Text;
-                    }
+                    if (btnNumero.ClassId.Equals("btnPonto") && valor2.Contains('.'))
+                        return;
+                    valor2 += btnNumero.Text;
+                    lblNumero.Text += btnNumero.Text;
                 }
             }
         }
@@ -109,6 +100,8 @@ namespace Desafio1
 
             if (btnOperator.ClassId.Equals("btnIgual"))
             {
+                if (string.IsNullOrEmpty(valor2))
+                    valor2 = valor1;
                 expression = valor1 + operador + valor2;
                 Expression ex = new Expression(expression);
                 resultado = ex.calculate() + "";
@@ -120,6 +113,9 @@ namespace Desafio1
 
             if (string.IsNullOrEmpty(operador))
             {
+                if (!string.IsNullOrEmpty(resultado))
+                    valor1 = resultado;
+
                 if (!lblNumero.Text.Last().Equals('.'))
                 {
                     if (btnOperator.ClassId.Equals("btnDiv"))
@@ -166,6 +162,7 @@ namespace Desafio1
         void OnButtonClearClicked(object sender, EventArgs e)
         {
             lblNumero.Text = "0";
+            operadorPrimario = true;
             valor1 = "";
             valor2 = "";
             operador = "";
