@@ -88,6 +88,13 @@ namespace Desafio1
                 {
                     if (btnNumero.ClassId.Equals("btnPonto") && valor2.Contains('.'))
                         return;
+                    if (!string.IsNullOrEmpty(resultado))
+                    {
+                        valor2 = btnNumero.Text;
+                        lblNumero.Text += btnNumero.Text;
+                        resultado = "";
+                        return;
+                    }
                     valor2 += btnNumero.Text;
                     lblNumero.Text += btnNumero.Text;
                 }
@@ -100,18 +107,21 @@ namespace Desafio1
 
             if (btnOperator.ClassId.Equals("btnIgual"))
             {
+                //if (string.IsNullOrEmpty(valor2))
+                //    valor2 = valor1;
                 if (string.IsNullOrEmpty(valor2))
-                    valor2 = valor1;
-                expression = valor1 + operador + valor2;
+                    expression = valor1;
+                else
+                    expression = valor1 + operador + valor2;
                 Expression ex = new Expression(expression);
                 resultado = ex.calculate() + "";
+                resultado = resultado.Replace(',', '.');
                 lblNumero.Text = resultado;
                 valor1 = resultado;
                 operadorPrimario = true;
                 return;
             }
-
-            if (string.IsNullOrEmpty(operador))
+            else
             {
                 if (!string.IsNullOrEmpty(resultado))
                     valor1 = resultado;
@@ -157,6 +167,53 @@ namespace Desafio1
                     lblNumero.Text += "0" + btnOperator.Text;
                 }
             }
+
+            //if (string.IsNullOrEmpty(operador))
+            //{
+            //    if (!string.IsNullOrEmpty(resultado))
+            //        valor1 = resultado;
+
+            //    if (!lblNumero.Text.Last().Equals('.'))
+            //    {
+            //        if (btnOperator.ClassId.Equals("btnDiv"))
+            //        {
+            //            operador = "/";
+            //            operadorPrimario = false;
+            //            lblNumero.Text += "÷";
+            //            return;
+            //        }
+            //        if (btnOperator.ClassId.Equals("btnMult"))
+            //        {
+            //            operador = "*";
+            //            operadorPrimario = false;
+            //            lblNumero.Text += "x";
+            //            return;
+            //        }
+            //        operador = btnOperator.Text;
+            //        operadorPrimario = false;
+            //        lblNumero.Text += btnOperator.Text;
+            //    }
+            //    else
+            //    {
+            //        if (btnOperator.ClassId.Equals("btnDiv"))
+            //        {
+            //            operador = "0/";
+            //            operadorPrimario = false;
+            //            lblNumero.Text += "0÷";
+            //            return;
+            //        }
+            //        if (btnOperator.ClassId.Equals("btnMult"))
+            //        {
+            //            operador = "0*";
+            //            operadorPrimario = false;
+            //            lblNumero.Text += "0x";
+            //            return;
+            //        }
+            //        operador = "0" + btnOperator.Text;
+            //        operadorPrimario = false;
+            //        lblNumero.Text += "0" + btnOperator.Text;
+            //    }
+            //}
         }
 
         void OnButtonClearClicked(object sender, EventArgs e)
@@ -171,7 +228,14 @@ namespace Desafio1
 
         void OnButtonMaisMenosClicked(object sender, EventArgs e)
         {
-            lblNumero.Text = "123";
+            if (operadorPrimario)
+            {
+                valor1 = "-" + valor1;
+            }
+            else
+            {
+                valor2 = "-" + valor2;
+            }
         }
     }
 }
