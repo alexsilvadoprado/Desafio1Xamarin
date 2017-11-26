@@ -61,10 +61,10 @@
                 FontSize="Medium"
                 BackgroundColor="#DDD"
                 Grid.Row="1"
-                Grid.Column="2"
-                Clicked="OnButtonOperationClicked" />
+                Grid.Column="2" />
 
-        <Button ClassId="btnDiv" 
+        <Button x:Name="btnDiv"
+                ClassId="btnDiv" 
                 Text="DIV"
                 TextColor="White"
                 FontSize="Medium"
@@ -102,7 +102,8 @@
                 Grid.Column="2"
                 Clicked="OnButtonNumberClicked" />
 
-        <Button ClassId="btnMult" 
+        <Button x:Name="btnMult"
+                ClassId="btnMult" 
                 Text="x"
                 TextColor="White"
                 FontSize="Medium"
@@ -140,7 +141,8 @@
                 Grid.Column="2"
                 Clicked="OnButtonNumberClicked" />
 
-        <Button ClassId="btnMenos" 
+        <Button x:Name="btnMenos"
+                ClassId="btnMenos" 
                 Text="-"
                 TextColor="White"
                 FontSize="Medium"
@@ -178,7 +180,8 @@
                 Grid.Column="2"
                 Clicked="OnButtonNumberClicked" />
 
-        <Button ClassId="btnMais" 
+        <Button x:Name="btnMais"
+                ClassId="btnMais" 
                 Text="+"
                 TextColor="White"
                 FontSize="Medium"
